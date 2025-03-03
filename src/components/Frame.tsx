@@ -128,20 +128,22 @@ export default function Frame() {
   }
 
   return (
-    <div
-      style={{
-        paddingTop: context?.client.safeAreaInsets?.top ?? 0,
-        paddingBottom: context?.client.safeAreaInsets?.bottom ?? 0,
-        paddingLeft: context?.client.safeAreaInsets?.left ?? 0,
-        paddingRight: context?.client.safeAreaInsets?.right ?? 0,
-      }}
-    >
+    <html>
+      <body
+        style={{
+          paddingTop: context?.client.safeAreaInsets?.top ?? 0,
+          paddingBottom: context?.client.safeAreaInsets?.bottom ?? 0,
+          paddingLeft: context?.client.safeAreaInsets?.left ?? 0,
+          paddingRight: context?.client.safeAreaInsets?.right ?? 0,
+        }}
+      >
       <div className="w-[300px] mx-auto py-2 px-2">
         <h1 className="text-2xl font-bold text-center mb-4 text-gray-700 dark:text-gray-300">
           {PROJECT_TITLE}
         </h1>
         <ExampleCard />
       </div>
-    </div>
+      </body>
+    </html>
   );
 }
