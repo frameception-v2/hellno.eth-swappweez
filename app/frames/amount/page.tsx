@@ -1,5 +1,5 @@
-export default function Frame({ searchParams }: { searchParams: URLSearchParams }) {
-  const direction = searchParams.get('direction');
+export default function Frame({ searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }) {
+  const direction = searchParams.direction;
   const nextUrl = `/frames/confirm?direction=${direction}`;
   
   return (
