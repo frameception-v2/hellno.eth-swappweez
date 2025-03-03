@@ -2,7 +2,7 @@ import { ethers } from "ethers";
 import { z } from "zod";
 
 const swapSchema = z.object({
-  amount: z.string().refine((val) => /^\d+\.?\d*$/.test(val), 
+  amount: z.string().refine((val) => /^\d+\.?\d*$/.test(val)),
   address: z.string().refine((val) => ethers.isAddress(val))
 });
 

@@ -1,8 +1,8 @@
-export default function Frame({ 
-  searchParams 
-}: { 
-  searchParams: { direction: string } 
-}) {
+interface PageProps {
+  searchParams: Record<string, string>;
+}
+
+export default function Frame({ searchParams }: PageProps) {
   // Preserve direction in hidden field
   return (
     <div>
