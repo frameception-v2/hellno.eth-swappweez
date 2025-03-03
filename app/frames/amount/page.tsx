@@ -1,9 +1,10 @@
-export default function Frame({ searchParams }: { searchParams: { direction: string } }) {
-  const nextUrl = `/frames/confirm?direction=${searchParams.direction}`;
+export default function Frame({ searchParams }: { searchParams: URLSearchParams }) {
+  const direction = searchParams.get('direction');
+  const nextUrl = `/frames/confirm?direction=${direction}`;
   
   return (
     <div>
-      <h1>Enter Amount ({searchParams.direction})</h1>
+      <h1>Enter Amount ({direction})</h1>
       <form action={nextUrl} method="GET">
         <input 
           type="text"
