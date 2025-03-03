@@ -26,7 +26,7 @@
   ```
   Completion: API returns 200 with mock txHash for valid POST requests
 
-- [ ] Task 3: Implement token swap execution  
+- [x] Task 3: Implement token swap execution  
   File: lib/swap.ts  
   Action: Add executeSwap function with ethers.js  
   Description: Real contract interaction using TOKEN_CONFIG  
