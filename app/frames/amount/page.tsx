@@ -1,4 +1,6 @@
-export default function Frame({ searchParams }: { 
+export default function Frame({ 
+  searchParams 
+}: { 
   searchParams: { direction: string } 
 }) {
   // Preserve direction in hidden field
