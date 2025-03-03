@@ -15,13 +15,19 @@
   Action: Create POST handler with Zod validation  
   Description: Basic endpoint structure with mock response  
   ```ts
-  import { z } from 'zod';
-  const schema = z.object({ amount: z.string(), address: z.string() });
+import { validateSwapRequest } from "~/middleware/validateSwap";
   
-  export async function POST(req: Request) {
-    const data = await req.json();
-    const result = schema.safeParse(data);
-    return Response.json({ success: result.success, txHash: '0x...' });
+export async function POST(req: Request) {
+  try {
+    const body = await req.json();
+    const validated = validateSwapRequest(body);
+    return Response.json({ success: true, txHash: '0x...' });
+  } catch (error) {
+    return Response.json(
+      { success: false, error: error.errors },
+      { status: error.status || 500 }
+    );
+  }
   }
   ```
   Completion: API returns 200 with mock txHash for valid POST requests
@@ -53,7 +59,7 @@
   ```
   Completion: Full context (direction/amount/txHash) preserved through navigation
 
-- [ ] Task 5: Implement validation middleware  
+- [x] Task 5: Implement validation middleware  
   File: middleware/validateSwap.ts  
   Action: Create validation layer  
   Description: Add regex and address checks  
