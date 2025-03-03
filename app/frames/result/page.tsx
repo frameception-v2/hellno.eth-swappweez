@@ -2,6 +2,7 @@ export default function Frame({ searchParams }: {
   searchParams: { 
     direction: string;
     amount: string;
+    address: string;
     txHash: string;
   } 
 }) {

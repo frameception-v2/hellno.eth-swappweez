@@ -1,15 +1,17 @@
-export default function Frame({ searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }) {
-  const direction = searchParams.direction;
-  const nextUrl = `/frames/confirm?direction=${direction}`;
-  
+export default function Frame({ searchParams }: { 
+  searchParams: { direction: string } 
+}) {
+  // Preserve direction in hidden field
   return (
     <div>
-      <h1>Enter Amount ({direction})</h1>
-      <form action={nextUrl} method="GET">
+      <h1>Enter Amount ({searchParams.direction})</h1>
+      <form action="/frames/confirm" method="POST">
+        <input type="hidden" name="direction" value={searchParams.direction} />
         <input 
           type="text"
           name="amount"
           placeholder="0.00"
+          required
         />
         <button type="submit">Continue</button>
       </form>

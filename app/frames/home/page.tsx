@@ -1,12 +1,12 @@
-export default function Frame({ searchParams }: { searchParams: URLSearchParams }) {
+export default function Frame() {
   return (
     <div>
       <h1>Swap Interface</h1>
-      <form action="/frames/amount" method="GET">
+      <form action="/frames/amount" method="POST">
         <input type="hidden" name="direction" value="buy" />
         <button type="submit">Buy</button>
       </form>
-      <form action="/frames/amount" method="GET">
+      <form action="/frames/amount" method="POST">
         <input type="hidden" name="direction" value="sell" />
         <button type="submit">Sell</button>
       </form>

@@ -40,7 +40,7 @@
   ```
   Completion: executeSwap returns real testnet transaction hashes
 
-- [ ] Task 4: Add state persistence between frames  
+- [x] Task 4: Add state persistence between frames  
   File: app/frames/amount/page.tsx  
   Action: Modify all frame components  
   Description: Pass state through URL params and metadata  
