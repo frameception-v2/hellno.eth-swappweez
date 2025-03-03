@@ -10,7 +10,7 @@
   ```
   Completion: Can navigate Home → Amount → Confirm → Result with mock data
 
-- [ ] Task 2: Create swap API endpoint shell  
+- [x] Task 2: Create swap API endpoint shell  
   File: app/api/swap/route.ts  
   Action: Create POST handler with Zod validation  
   Description: Basic endpoint structure with mock response  
