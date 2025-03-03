@@ -1,4 +1,4 @@
-- [ ] Task 1: Create frame navigation components  
+- [x] Task 1: Create frame navigation components  
   File: app/frames/[page]/page.tsx  
   Action: Create 4 files (home/amount/confirmation/result)  
   Description: Implement basic frame routing structure with initial mock buttons  
